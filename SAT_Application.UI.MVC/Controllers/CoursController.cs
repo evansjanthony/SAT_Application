@@ -10,6 +10,7 @@ using SAT_Application.DATA.EF;
 
 namespace SAT_Application.UI.MVC.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class CoursController : Controller
     {
         private SAT_DatabaseEntities db = new SAT_DatabaseEntities();

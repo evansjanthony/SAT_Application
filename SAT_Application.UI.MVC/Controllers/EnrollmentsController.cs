@@ -10,6 +10,7 @@ using SAT_Application.DATA.EF;
 
 namespace SAT_Application.UI.MVC.Controllers
 {
+    [Authorize(Roles = "Admin, Scheduling")]
     public class EnrollmentsController : Controller
     {
         private SAT_DatabaseEntities db = new SAT_DatabaseEntities();
@@ -39,7 +40,7 @@ namespace SAT_Application.UI.MVC.Controllers
         // GET: Enrollments/Create
         public ActionResult Create()
         {
-            ViewBag.ScheduledClassID = new SelectList(db.ScheduledClasses, "ScheduledClassID", "InstructorName");
+            ViewBag.ScheduledClassID = new SelectList(db.ScheduledClasses, "ClassOverview", "InstructorName");
             ViewBag.StudentID = new SelectList(db.Students, "StudentID", "FirstName");
             return View();
         }

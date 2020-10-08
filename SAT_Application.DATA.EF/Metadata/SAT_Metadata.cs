@@ -101,7 +101,10 @@ namespace SAT_Application.DATA.EF
     [MetadataType(typeof(ScheduledClassMetadata))]
     public partial class ScheduledClass
     {
-
+        public string ClassOverview
+        {
+            get { return CourseID + ", " + StartDate + ", " + Location; }
+        }
     }
 
     #endregion
