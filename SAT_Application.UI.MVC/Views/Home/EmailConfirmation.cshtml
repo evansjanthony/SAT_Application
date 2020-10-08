@@ -1,0 +1,26 @@
+﻿@model SAT_Application.UI.MVC.Models.ContactViewModel
+
+@{
+    ViewBag.Title = "Message Confirmed";
+}
+
+<div class="form-style text-center">
+    <h2>@ViewBag.Title</h2>
+    <p>
+        Thank you for reaching out, @Model.Name!<br />We will reply as soon as possible to @Model.Email.
+    </p>
+    <p>
+        Received: @DateTime.Now<br />Subject: @Model.Subject<br/>Message: @Model.Message
+    </p>
+</div>
+
+@section scripts
+{
+    <script>
+        $(document).ready(function () {
+            $('html,body').animate({
+                scrollTop: $("#main").offset().top
+            }, 1000);
+        });
+    </script>
+    }

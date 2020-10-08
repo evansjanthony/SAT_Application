@@ -9,7 +9,7 @@ namespace SAT_Application.DATA.EF
 {
     public class CoursMetadata
     {
-        #region Course
+    #region Course
 
         //public int CourseID { get; set; }
         [Required(ErrorMessage = "* Course Name is required. *")]
@@ -17,7 +17,7 @@ namespace SAT_Application.DATA.EF
         [StringLength(50, ErrorMessage = "* Course Name cannot exceed 50 characters. *")]
         public string CourseName { get; set; }
 
-        [UIHint("MultiLineText")]
+        [UIHint("MultilineText")]
         [Required(ErrorMessage = "* Course Description is required. *")]
         [Display(Name = "Course Description")]
         public string CourseDescription { get; set; }
@@ -67,6 +67,7 @@ namespace SAT_Application.DATA.EF
 
     }
     #endregion
+
     #region ScheduledClass
     public class ScheduledClassMetadata
     {
@@ -162,16 +163,16 @@ namespace SAT_Application.DATA.EF
 
         [Required(ErrorMessage = "*Email is required")]
         [EmailAddress(ErrorMessage = "*Please enter a valid email.")]
-        [StringLength(60, ErrorMessage = "Email cannot exceed 60 characters")]
+        [StringLength(60, ErrorMessage = "Email cannot exceed 60 characters.")]
         public string Email { get; set; }
 
         [DisplayFormat(NullDisplayText = "N/A")]
-        [StringLength(100, ErrorMessage = "*Photo URL cannot exceed 100 characters")]
+        [StringLength(100, ErrorMessage = "* Photo URL cannot exceed 100 characters *")]
         [Display(Name = "Photo URL")]
         public string PhotoURL { get; set; }
 
-        [Required(ErrorMessage = "*Scheduled Class Status Name is required")]
-        [Display(Name = "Scheduled Class Status ID")]
+        [Required(ErrorMessage = "* Student Status Name is required *")]
+        [Display(Name = "Student Status ID")]
         public int SSID { get; set; }
     }
     [MetadataType(typeof(StudentMetadata))]
@@ -195,7 +196,7 @@ namespace SAT_Application.DATA.EF
         [StringLength(30, ErrorMessage = "*Student Status Name cannot exceed 30 characters")]
         public string SSName { get; set; }
 
-        [UIHint("MultiLineText")]
+        [UIHint("MultilineText")]
         [DisplayFormat(NullDisplayText = "N/A")]
         [Display(Name = "Student Status Description")]
         [StringLength(250, ErrorMessage = "*Student Status description cannot exceed 250 characters")]
